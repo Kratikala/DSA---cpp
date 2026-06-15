@@ -335,53 +335,160 @@
 //     return 0;
 // }
 
-// Concatenate Two Character Arrays
+// // Concatenate Two Character Arrays
+
+// # include <iostream>
+// using namespace std;
+// int getlength(char arr[]){
+//     int count = 0;
+//     while (arr[count] != '\0'){
+//         count++;
+//     }
+//     return count;
+// }
+// void concatenate(char a[], char b[]){
+//     int aIndex = getlength(a);
+//     int bIndex = 0;
+//     while (b[bIndex] != '\0'){
+//         a[aIndex] = b[bIndex];
+//         aIndex++;
+//         bIndex++;
+//     }
+//     cout << a;
+// }
+// int main(){
+//     char a[50] = "love";
+//     char b[50] = "all";
+//     concatenate(a, b);
+//     return 0;
+// }
+
+// // Count Frequency of a Character
+
+// # include <iostream>
+// using namespace std;
+// int frequency(char arr[]){
+//     char target = 'r';
+//     int count = 0;
+//     for (int i = 0; arr[i] != '\0'; i++){
+//         if (arr[i] == target){
+//             count++;
+//         }
+//     }
+//     cout << "Frequency is : " << count <<  "";
+// }
+// int main(){
+//     char arr[50] = "kratikarr";
+//     frequency(arr);
+//     return 0;
+// }
+
+// // Find First Non-Repeating Character
+
+// # include <iostream>
+// using namespace std;
+// void non_repeating(char arr[]){
+//     for(int i = 0; arr[i] != '\0'; i++){
+//         int frequency = 0;
+//         for (int j = 0; arr[j] != '\0'; j++){
+//             if (arr[j] == arr[i]){
+//                 frequency++;
+//             }
+//         }
+//         if (frequency == 1){
+//             cout << arr[i] ;
+//             return;
+//         }
+//     }
+// }
+// int main(){
+//     char arr[50] = "aabbcdde";
+//     non_repeating(arr);
+//     return 0;
+// }
+
+// // Remove Spaces
+
+// # include <iostream>
+// using namespace std;
+// void remove(char arr[]){
+//     int read = 0;
+//     int write = 0;
+//     while (arr[read] != '\0'){
+//         if (arr[read] != ' '){
+//             arr[write] = arr[read];
+//             write++;
+//         }
+//         read++;
+//     }
+//     arr[write] = '\0';
+//     cout << arr;
+// }
+// int main(){
+//     char arr[50] = "Hello World";
+//     remove(arr);
+//     return 0;
+// }
+
+// // Replace Spaces with '@'
+
+// # include <iostream>
+// using namespace std;
+// void replace(char arr[]){
+//     for (int i = 0; arr[i] != '\0'; i++){
+//         if (arr[i] == ' '){
+//             arr[i] = '@';
+//         }
+//     }
+//     cout << arr;
+// }
+// int main(){
+//     char arr[50] = "Hello World";
+//     replace(arr);
+//     return 0;
+// }
+
+// Check if Two Strings are Anagrams
 
 # include <iostream>
 using namespace std;
 int getlength(char arr[]){
     int count = 0;
-    while (arr[count] != '\0'){
+    while(arr[count] != '\0'){
         count++;
     }
     return count;
 }
-void concatenate(char a[], char b[]){
-    int aIndex = getlength(a);
-    int bIndex = 0;
-    while (b[bIndex] != '\0'){
-        a[aIndex] = b[bIndex];
-        aIndex++;
-        bIndex++;
+void anagram(char a[], char b[]){
+    int alength = getlength(a);
+    int blength = getlength(b);
+    if (alength != blength){
+        cout << "Not anagram";
+        return;
     }
-    cout << a;
+    int frequency1[26] = {0};
+    for( int i = 0; a[i] != '\0'; i++){
+        int index = a[i] - 'a';
+        frequency1[index]++;
+    }
+    int frequency2[26] = {0};
+    for(int j = 0; b[j] != '\0'; j++){
+        int index = b[j] - 'a';
+        frequency2[index]++;
+    }
+    for (int index = 0; index <= 25; index++){
+        if (frequency1[index] != frequency2[index]){
+            cout << "Not anagram";
+            return;
+        }
+    }
+    cout << "Anagram";
 }
 int main(){
-    char a[50] = "love";
-    char b[50] = "all";
-    concatenate(a, b);
+    char a[50] = "listen";
+    char b[50] = "horse";
+    anagram(a, b);
     return 0;
 }
 
-// 11. Count Frequency of a Character
 
-
-// 12. Find First Non-Repeating Character
-
-
-// 13. Remove Spaces
-
-
-// 14. Replace Spaces with '@'
-
-
-// 15. Check if Two Strings are Anagrams
-
-// Example:
-
-// listen
-// silent
-
-// Output:
-
-// Yes
