@@ -181,105 +181,224 @@
 //     return 0;
 // }
 
-// Compare Two Strings
+// // Compare Two Strings
+
+// # include <iostream>
+// # include <string>
+// using namespace std;
+// int length(string str){
+//     int count = 0;
+//     while(str[count] != '\0'){
+//         count++;
+//     }
+//     return count;
+// }
+// bool compare(string a, string b){
+//     int alength = length(a);
+//     int blength = length(b);
+//     if (alength != blength){
+//         return false;
+//     }
+//     int aindex = 0;
+//     int bindex = 0;
+//     while(aindex < alength){
+//         if (a[aindex] != b[bindex]){
+//             return false;
+//         }
+//             aindex++;
+//             bindex++;
+//     }
+//     return true; 
+// }
+// int main(){
+//     string a = "love";
+//     string b = "love";
+//     if(compare(a, b)){
+//         cout << "Strings are equal";
+//     }
+//     else{
+//         cout << "Strings are not equal";
+//     }
+//     return 0;
+// }
+
+// // Copy One String into Another
+
+// # include <iostream>
+// # include <string>
+// using namespace std;
+// void copy_str(string actual, string &copy){
+//     int i = 0;
+//     while (actual[i] != '\0'){
+//         copy.push_back(actual[i]);
+//         i++;
+//     }
+//     cout << copy << " ";
+// }
+// int main(){
+//     string actual = "love";
+//     string copy;
+//     copy_str(actual, copy);
+//     return 0;
+// }
+
+// // Concatenate Two Strings
+
+// # include <iostream>
+// # include <string>
+// using namespace std;
+// int length(string str){
+//     int count = 0;
+//     while(str[count] != '\0'){
+//         count++;
+//     }
+//     return count;
+// }
+// void concatenate(string a, string b){
+//     int bindex = 0;
+//     while(b[bindex] != '\0'){
+//         a.push_back(b[bindex]);
+//         bindex++;
+//     }
+//     cout << a;
+// }
+// int main(){
+//     string a = "love";
+//     string b = "all";
+//     concatenate(a, b);
+//     return 0;
+// }
+
+// // Remove Spaces
+
+// # include <iostream>
+// # include <string>
+// using namespace std;
+// void remove(string str){
+//     int read = 0;
+//     int write = 0;
+//     while (str[read] != '\0'){
+//         if (str[read] != ' '){
+//             str[write] = str[read];
+//             write++;
+//         }
+//         read++;
+//     }
+//     str[write] = '\0';
+//     cout << str;
+// }
+// int main(){
+//     string str = "Hello World";
+//     remove(str);
+//     return 0;
+// }
+
+// // Replace Spaces with '@'
+
+// # include <iostream>
+// # include <string>
+// using namespace std;
+// void replace(string str){
+//     int read = 0;
+//     while(str[read] != '\0'){
+//         if (str[read] == ' '){
+//             str[read] = '@';
+//         }
+//         read++;
+//     }
+//     cout << str;
+// }
+// int main(){
+//     string str = "Hello World";
+//     replace(str);
+//     return 0;
+// }
+
+// // Find First Non-Repeating Character
+
+// # include <iostream>
+// # include <string>
+// using namespace std;
+// void non_repeating (string str){
+//     for( int i = 0; str[i] != '\0'; i++){
+//         int frequency = 0;
+//         for( int j = 0; str[j] != '\0'; j++){
+//             if(str[j] == str[i]){
+//                 frequency++;
+//             }
+//         }
+//         if (frequency == 1){
+//                 cout << str[i];
+//                 return;
+//         }
+//     }
+// }
+// int main(){
+//     string str = "aabbcdde";
+//     non_repeating(str);
+//     return 0;
+// }
+
+// Check Anagram
 
 # include <iostream>
 # include <string>
 using namespace std;
-int length(string str){
+int length (string str){
     int count = 0;
     while(str[count] != '\0'){
         count++;
     }
     return count;
 }
-bool compare(string a, string b){
+void anagram(string a, string b){
     int alength = length(a);
     int blength = length(b);
     if (alength != blength){
-        return false;
+        cout << "Not Anagram";
+        return;
     }
-    int aindex = 0;
-    int bindex = 0;
-    while(aindex < alength){
-        if (a[aindex] != b[bindex]){
-            return false;
+    int frequency1[26] = {0};
+    for( int i = 0; a[i] != '\0'; i++){
+        int index = a[i] - 'a';
+        frequency1[index]++;
+    }
+    int frequency2[26] = {0};
+    for( int j = 0; a[j] != '\0'; j++){
+        int index = a[j] - 'a';
+        frequency2[index]++;
+    }  
+    for (int index = 0; index < 26; index++){
+        if (frequency1[index] != frequency2[index]){
+            cout << "Not Anagram";
+            return;
         }
-            aindex++;
-            bindex++;
     }
-    return true; 
+    cout << "Anagram";
 }
 int main(){
-    string a = "love";
-    string b = "love";
-    if(compare(a, b)){
-        cout << "Strings are equal";
-    }
-    else{
-        cout << "Strings are not equal";
-    }
+    string a = "listen";
+    string b = "silent";
+    anagram(a, b);
     return 0;
 }
 
-// 10. Copy One String into Another
-// 11. Concatenate Two Strings
-// Hello
-// World
+// Count Frequency of Every Character
 
-// ↓
+# include <iostream>
+# include <string>
+using namespace std;
+void frequency(string str){
+    
+}
 
-// HelloWorld
-// 🟠 Level 3 (Interview Pattern)
-// 12. Remove Spaces
-// Hello World
 
-// ↓
+// Count Number of Words
 
-// HelloWorld
-// 13. Replace Spaces with '@'
-// Hello World
 
-// ↓
 
-// Hello@World
-// 14. Find First Non-Repeating Character
-// aabbcdde
+// Reverse Every Word
 
-// ↓
 
-// c
-// 15. Check Anagram
-// listen
-// silent
 
-// ↓
-
-// Anagram
-// 16. Count Frequency of Every Character
-// banana
-
-// ↓
-
-// a = 3
-// b = 1
-// n = 2
-// 🔴 Level 4 (Slightly Harder)
-// 17. Count Number of Words
-// I Love DSA
-
-// ↓
-
-// 3
-// 18. Reverse Every Word
-// I Love DSA
-
-// ↓
-
-// I evoL ASD
-// 19. Reverse Order of Words
-// I Love DSA
-
-// ↓
-
-// DSA Love I
+// Reverse Order of Words
