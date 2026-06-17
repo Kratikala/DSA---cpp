@@ -339,66 +339,146 @@
 //     return 0;
 // }
 
-// Check Anagram
+// // Check Anagram
 
-# include <iostream>
-# include <string>
-using namespace std;
-int length (string str){
-    int count = 0;
-    while(str[count] != '\0'){
-        count++;
-    }
-    return count;
-}
-void anagram(string a, string b){
-    int alength = length(a);
-    int blength = length(b);
-    if (alength != blength){
-        cout << "Not Anagram";
-        return;
-    }
-    int frequency1[26] = {0};
-    for( int i = 0; a[i] != '\0'; i++){
-        int index = a[i] - 'a';
-        frequency1[index]++;
-    }
-    int frequency2[26] = {0};
-    for( int j = 0; a[j] != '\0'; j++){
-        int index = a[j] - 'a';
-        frequency2[index]++;
-    }  
-    for (int index = 0; index < 26; index++){
-        if (frequency1[index] != frequency2[index]){
-            cout << "Not Anagram";
-            return;
-        }
-    }
-    cout << "Anagram";
-}
-int main(){
-    string a = "listen";
-    string b = "silent";
-    anagram(a, b);
-    return 0;
-}
+// # include <iostream>
+// # include <string>
+// using namespace std;
+// int length (string str){
+//     int count = 0;
+//     while(str[count] != '\0'){
+//         count++;
+//     }
+//     return count;
+// }
+// void anagram(string a, string b){
+//     int alength = length(a);
+//     int blength = length(b);
+//     if (alength != blength){
+//         cout << "Not Anagram";
+//         return;
+//     }
+//     int frequency1[26] = {0};
+//     for( int i = 0; a[i] != '\0'; i++){
+//         int index = a[i] - 'a';
+//         frequency1[index]++;
+//     }
+//     int frequency2[26] = {0};
+//     for( int j = 0; a[j] != '\0'; j++){
+//         int index = a[j] - 'a';
+//         frequency2[index]++;
+//     }  
+//     for (int index = 0; index < 26; index++){
+//         if (frequency1[index] != frequency2[index]){
+//             cout << "Not Anagram";
+//             return;
+//         }
+//     }
+//     cout << "Anagram";
+// }
+// int main(){
+//     string a = "listen";
+//     string b = "silent";
+//     anagram(a, b);
+//     return 0;
+// }
 
-// Count Frequency of Every Character
+// // Count Frequency of Every Character
 
-# include <iostream>
-# include <string>
-using namespace std;
-void frequency(string str){
-    
-}
+// # include <iostream>
+// # include <string>
+// using namespace std;
+// void frequency(string str){
+//     int frequency[26] = {0};
+//     for(int i = 0; str[i] != '\0'; i++){
+//         int index = str[i] - 'a';
+//         frequency[index]++;
+//     }
+//     for(int index = 0; index < 26; index++){
+//         if (frequency[index] > 0){
+//             cout << (char)(index + 'a') << " = " << frequency[index] << endl;
+//         }
+//     }
+// }
+// int main(){
+//     string str = "aabbcdde";
+//     frequency(str);
+//     return 0;
+// }
 
+// // Count Number of Words
 
-// Count Number of Words
+// # include <iostream>
+// # include <string>
+// using namespace std;
+// int count(string str){
+//     int count = 0;
+//     for(int i = 0; str[i] != '\0'; i++){
+//         if (str[i] != ' ' && i == 0 || str[i-1] == ' '){
+//             count++;
+//         }
+//     }
+//     cout << "Number of words are : " << count << " ";
+// }
+// int main(){
+//     string str = "I am Kratika Lekhra";
+//     count(str);
+//     return 0;
+// }
 
+// // Reverse Every Word
 
-
-// Reverse Every Word
-
-
+// # include <iostream>
+// # include <string>
+// using namespace std;
+// void reverse(string &str, int start, int end){
+//     while (start < end){
+//         swap(str[start], str[end]);
+//         start++;
+//         end--;
+//     }
+// }
+// void reverse_word(string &str){
+//     int start = 0;
+//     for( int end = 0; end <= str.length(); end++){
+//          if (end == str.length() || str[end] == ' ') {
+//             reverse(str, start, end - 1);
+//             start = end + 1;
+//         }
+//     }
+//     cout << str;
+// }
+// int main(){
+//     string str = "Hello World";
+//     reverse_word(str);
+//     return 0;
+// }
 
 // Reverse Order of Words
+
+# include <iostream>
+# include <string>
+using namespace std;
+void reverse(string &str, int start, int end){
+    while(start < end){
+        swap(str[start], str[end]);
+        start++;
+        end--;
+    }
+}
+void reverse_word(string &str){
+    int start = 0;
+    for( int end = 0; end <= str.length(); end++){
+         if (end == str.length() || str[end] == ' ') {
+            reverse(str, start, end - 1);
+            start = end + 1;
+        }
+    }
+}
+int main(){
+    string str = "My name is Kratika Lekhra";
+    reverse(str, 0, str.length() - 1);
+    reverse_word(str);
+    cout << str;
+    return 0;
+}
