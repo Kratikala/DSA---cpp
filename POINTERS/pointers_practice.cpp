@@ -1,24 +1,29 @@
-// Print Address of a Variable
+// // Print Address of a Variable
+
+// # include <iostream>
+// using namespace std;
+// int main(){
+
+//     int num = 10;
+//     cout << "Value : " << num << endl;
+//     cout << "Address : " << &num << endl;
+//     return 0;
+// }
+
+// Store Address in a Pointer
 
 # include <iostream>
 using namespace std;
 int main(){
 
-    int num = 10;
-    cout << "Value : " << num << endl;
-    cout << "Address : " << &num << endl;
+    int num = 5;
+    int *ptr = &num;
+    cout << num << endl;
+    cout << &num << endl;
+    cout << ptr << endl;
     return 0;
 }
 
-// 2. Store Address in a Pointer
-// int num = 20;
-// int *ptr = &num;
-
-// Print:
-
-// num
-// &num
-// ptr
 // 3. Dereference Pointer
 
 // Print
