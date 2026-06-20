@@ -10,106 +10,171 @@
 //     return 0;
 // }
 
-// Store Address in a Pointer
+// // Store Address in a Pointer
+
+// # include <iostream>
+// using namespace std;
+// int main(){
+
+//     int num = 5;
+//     int *ptr = &num;
+//     cout << num << endl;
+//     cout << &num << endl;
+//     cout << ptr << endl;
+//     return 0;
+// }
+
+// // Dereference Pointer
+
+// # include <iostream>
+// using namespace std;
+// int main(){
+//      int num = 10;
+//      int *ptr = &num;
+//      cout << ptr << endl;   // Address of num
+//      cout << &ptr << endl;     // Address of the ptr in which the address is stored
+//      cout << *ptr << endl;     
+//      return 0;
+// }
+
+// // Modify Variable Using Pointer
+
+// # include <iostream>
+// using namespace std;
+// int main(){
+//     int num = 5;
+//     int *ptr = &num;
+//     *ptr = 100;  // Go to the address stored in ptr.
+//     cout << num;
+// }
+
+// // Pointer Size
+
+// # include <iostream>
+// using namespace std;
+// int main(){
+//     int num = 10;
+//     int *ptr = &num;
+//     cout << sizeof(num) << endl;
+//     cout << sizeof(ptr) << endl;
+//     cout << sizeof(*ptr) << endl;
+//     return 0;
+// }
+
+// // Pointer Arithmetic on Array
+
+// # include <iostream>
+// using namespace std;
+// int main(){
+//     int arr[5] = {10, 20, 30, 40, 50};
+
+//     cout << "arr : " << arr << endl;   // prints the address of the first element
+//     cout << "arr + 1 : " << arr + 1 << endl;    // address oof second element
+//     cout << "arr + 2 : " << arr + 2 << endl;
+//     cout << "*(arr) : " << *arr << endl;     // element stored at address 
+//     cout << "*(arr + 1) : " << *arr + 1 << endl;
+//     cout << "*(arr + 2) : " << *arr + 2 << endl;
+//     return 0;
+
+// }
+
+// // Traverse Array Using Pointer
+
+// # include <iostream>
+// using namespace std;
+// int main(){
+//     int arr[5] = {10, 20, 30, 40, 50};
+//     int *ptr = arr;
+//     int i = 0;
+//     while (i < 5){
+//         cout << *ptr << " ";
+//         ptr ++;
+//         i ++;
+//     }
+//     return 0;
+// }
+
+// // Add All Elements Using Pointer
+
+// # include <iostream>
+// using namespace std;
+// int main(){
+//     int arr[5] = {1, 2, 3, 4, 5};
+//     int *ptr = arr;
+//     int i = 0;
+//     int sum = 0;
+//     while (i < 5){
+//         sum = sum + *ptr;
+//         ptr ++;
+//         i ++;
+//     }
+//     cout << "Sum is : " << sum;
+//     return 0;
+// }
+
+// // Reverse Array Using Pointers
+
+// # include <iostream>
+// using namespace std;
+// int main(){
+//     int arr[5] = {1, 2, 3, 4, 5};
+//     int *ptr = arr;
+//     int *end = arr + 4;
+//     while (ptr < end){
+//         swap(*ptr, *end);
+//         ptr++;
+//         end--;
+//     }
+//     for (int *ptr = arr; ptr < arr + 5; ptr++) {
+//         cout << *ptr << " ";
+//     }
+//     return 0;
+// }
+
+// // Print String Using Pointer
+
+// # include <iostream>
+// using namespace std;
+// int main(){
+//     char str[] = "Hello";
+//     char *ptr = str;
+//     cout << ptr << " ";
+//     return 0;
+// }
+
+// // Find Length Using Pointer
+
+// # include <iostream>
+// using namespace std;
+// int main(){
+//     char str[] = "Kratika";
+//     char *ptr = str;
+//     int count = 0;
+//     while(*ptr != '\0' ){
+//         count++;
+//         ptr++;
+//     }
+//     cout << "Length : " << count << " ";
+//     return 0;
+// }
+
+// Count Vowels Using Pointer
 
 # include <iostream>
 using namespace std;
 int main(){
-
-    int num = 5;
-    int *ptr = &num;
-    cout << num << endl;
-    cout << &num << endl;
-    cout << ptr << endl;
-    return 0;
+    char str[] = "Kratika";
+    char *ptr = str;
+    int vowel = 0;
+    while (*ptr != '\0'){
+         if (*ptr == 'a' || *ptr == 'e' || *ptr == 'i' || *ptr == 'o' || *ptr == 'u' || *ptr == 'A' || *ptr == 'E' || *ptr == 'I' || *ptr == 'O' || *ptr == 'U'){
+            vowel++;
+        }
+        ptr++;
+    }
+    cout << "Vowels : " << vowel << " ";   
 }
 
-// 3. Dereference Pointer
-
-// Print
-
-// *ptr
-// 4. Modify Variable Using Pointer
-// num = 5;
-
-// Change it to
-
-// 100
-
-// using
-
-// *ptr
-// 5. Pointer Size
-
-// Print
-
-// sizeof(ptr)
-// sizeof(int*)
-// sizeof(char*)
-// sizeof(double*)
-
-// Observe the output.
-
-// ⭐⭐ Level 2: Pointer Arithmetic
-// 6. Pointer Arithmetic on Array
-// int arr[5] = {10,20,30,40,50};
-
-// Print
-
-// arr
-// arr+1
-// arr+2
-
-// Then print
-
-// *(arr)
-// *(arr+1)
-// *(arr+2)
-// 7. Traverse Array Using Pointer
-
-// Without using
-
-// arr[i]
-
-// Print
-
-// 10 20 30 40 50
-// 8. Add All Elements Using Pointer
-
-// Array
-
-// int arr[]={1,2,3,4,5};
-
-// Find sum using pointer only.
-
-// 9. Reverse Array Using Pointers
-
-// Don't use indexing.
-
-// Use
-
-// start pointer
-// end pointer
-// ⭐⭐⭐ Level 3: Character Pointers
-// 10. Print String Using Pointer
-// Hello
-
-// Print character by character using
-
-// char *ptr
-// 11. Find Length Using Pointer
-
-// Don't use
-
-// str.length()
-
-// or indexing.
-
-// 12. Count Vowels Using Pointer
-
-// Use only
-
-// ptr++
 // ⭐⭐⭐ Level 4: Functions
 // 13. Swap Two Numbers Using Pointers
 
