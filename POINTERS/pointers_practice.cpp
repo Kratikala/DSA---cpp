@@ -158,76 +158,113 @@
 //     return 0;
 // }
 
-// Count Vowels Using Pointer
+// // Count Vowels Using Pointer
 
-# include <iostream>
-using namespace std;
-int main(){
-    char str[] = "Kratika";
-    char *ptr = str;
-    int vowel = 0;
-    while (*ptr != '\0'){
-         if (*ptr == 'a' || *ptr == 'e' || *ptr == 'i' || *ptr == 'o' || *ptr == 'u' || *ptr == 'A' || *ptr == 'E' || *ptr == 'I' || *ptr == 'O' || *ptr == 'U'){
-            vowel++;
-        }
-        ptr++;
-    }
-    cout << "Vowels : " << vowel << " ";   
-}
+// # include <iostream>
+// using namespace std;
+// int main(){
+//     char str[] = "Kratika";
+//     char *ptr = str;
+//     int vowel = 0;
+//     while (*ptr != '\0'){
+//          if (*ptr == 'a' || *ptr == 'e' || *ptr == 'i' || *ptr == 'o' || *ptr == 'u' || *ptr == 'A' || *ptr == 'E' || *ptr == 'I' || *ptr == 'O' || *ptr == 'U'){
+//             vowel++;
+//         }
+//         ptr++;
+//     }
+//     cout << "Vowels : " << vowel << " ";   
+// }
 
-// ⭐⭐⭐ Level 4: Functions
-// 13. Swap Two Numbers Using Pointers
+// // Swap Two Numbers Using Pointers
 
-// Input
+// # include <iostream>
+// using namespace std;
+// int main(){
+//     int num1 = 10;
+//     int num2 = 20;
+//     int *p1 = &num1;
+//     int *p2 = &num2;
+//     int temp = *p1;
+//     *p1 = *p2;
+//     *p2 = temp;
+//     cout << num1 << endl;
+//     cout << num2 << endl;
+// }
 
-// 10
-// 20
+// // Increment Number Using Pointer
 
-// Output
+// # include <iostream>
+// using namespace std;
+// int main(){
+//     int num = 10;
+//     int *ptr = &num;
+//     (*ptr)++;
+//     cout << num;
+// }
 
-// 20
-// 10
-// 14. Increment Number Using Pointer
+// // Find Maximum Using Pointer
 
-// Write
+// # include <iostream>
+// using namespace std;
+// int main(){
+//     int a = 30;
+//     int b = 20;
+//     int *p1 = &a;
+//     int *p2 = &b;
+//     if (*p1 > *p2){
+//         cout << *p1;
+//     }
+//     else{
+//         cout << *p2;
+//     }
+// }
 
-// increment(int *ptr)
-// 15. Find Maximum Using Pointer
+// // Dynamic Integer
+// // Create integer using
+// // new
+// // Store
+// // 50
+// // Print it.
+// // Delete Memory
 
-// Input
+// # include <iostream>
+// using namespace std;
+// int main(){
+//     int *ptr = new int;
+//     *ptr = 50;
+//     cout << *ptr;
 
-// 5 9
+//     delete ptr;
+//     return 0;
+// }
 
-// Return maximum.
-
-// ⭐⭐⭐⭐ Level 5: Dynamic Memory
-// 16. Dynamic Integer
-
-// Create integer using
-
-// new
-
-// Store
-
-// 50
-
-// Print it.
-
-// Delete memory.
-
-// 17. Dynamic Array
-
+// Dynamic Array
 // Take size from user.
-
 // Create
-
 // new int[size];
-
 // Input elements.
-
 // Print elements.
-
 // Delete memory.
+
+#include <iostream>
+using namespace std;
+int main() {
+    int size;
+    cout << "Size is : " ;
+    cin >> size;
+    int *ptr = new int[size];
+    // input elements
+    for (int i = 0; i < size; i++){
+        cin >> ptr[i];
+    }
+    // print elements
+    for (int i = 0; i < size; i++) {
+        cout << ptr[i] << " ";
+    }
+    // free memory
+    delete[] ptr;
+    return 0;
+}
 
 // 18. Find Sum of Dynamic Array
 // 19. Find Maximum in Dynamic Array
