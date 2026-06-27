@@ -1,120 +1,382 @@
-// 🟢 QUEUE (6 Questions)
 // 1. Insert
 
-// Insert
+# include <iostream>
+# include <queue>
+using namespace std;
+int main(){
+    queue <int> q;
+    q.push(10);
+    q.push(20);
+    q.push(30);
+    q.push(40);
+    cout << "Front -> " << q.front() << endl;
+    cout << "End -> " << q.back() << endl;
+    return 0;
+}
 
-// 10 20 30 40 50
-
-// Print
-
-// Front
-// Back
 // 2. Pop Two Elements
 
-// Print remaining queue.
+# include <iostream>
+# include <queue>
+using namespace std;
+int main(){
+    queue <int> q;
+    q.push(10);
+    q.push(20);
+    q.push(30);
+    q.push(40);
+    q.pop();
+    q.pop();
+
+    queue <int> temp = q;
+    while(!temp.empty()){
+        cout << temp.front() << " ";
+        temp.pop();
+    }
+    return 0;
+}
 
 // 3. Print Queue
 
-// (Hint: Copy the queue.)
+# include <iostream>
+# include <queue>
+using namespace std;
+int main(){
+    queue <int> q;
+    q.push(10);
+    q.push(20);
+    q.push(30);
+    q.push(40);
+
+    queue <int> temp = q;
+    while(!temp.empty()){
+        cout << temp.front() << " ";
+        temp.pop();
+    }
+    return 0;
+}
 
 // 4. Sum of Queue
 
-// Output
+# include <iostream>
+# include <queue>
+using namespace std;
+int main(){
+    queue <int> q;
+    int sum = 0;
+    q.push(10);
+    q.push(20);
+    q.push(30);
+    q.push(40);
+    q.push(50);
 
-// 150
+    queue <int> temp = q;
+    while(!temp.empty()){
+        sum += temp.front();
+        temp.pop();
+    }
+    cout << "SUM : " << sum << " ";
+    return 0;
+}
+
 // 5. Count Even Numbers
 
-// Queue
+# include <iostream>
+# include <queue>
+using namespace std;
+int main(){
+    queue <int> q;
+    int count_even = 0;
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(4);
+    q.push(5);
 
-// 1 2 3 4 5 6
+    queue <int> temp = q;
+    while(!temp.empty()){
+        if(temp.front() % 2 == 0){
+            count_even++;
+        }
+        temp.pop();
+    }
+    cout << "EVEN : " << count_even << " ";
+    return 0;
+}
 
-// Output
-
-// 3
 // 6. Reverse Queue
 
-// (Hint: Stack + Queue.)
+# include <iostream>
+# include <stack>
+# include <queue>
+using namespace std;
+int main(){
+    queue <int> q;
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(4);
+    q.push(5);
+
+    stack <int> st;
+    while(!q.empty()){
+        st.push(q.front());
+        q.pop();
+    }
+    while(!st.empty()){
+        q.push(st.top());
+        st.pop();
+    }
+    queue <int> temp = q;
+    while(!temp.empty()){
+        cout << temp.front() << " ";
+        temp.pop();
+    }
+    return 0;
+}
 
 // 🟡 DEQUE (5 Questions)
 // 1. Push Front
 
-// Insert
+# include <iostream>
+# include <queue>
+using namespace std;
+int main(){
+    deque <int> dq;
+    dq.push_front(300);
+    dq.push_front(200);
+    dq.push_front(100);
 
-// 10
-// 20
-// 30
+    for(int i : dq){
+        cout << i << " ";
+    }
+    return 0;
+}
 
-// using push_front()
 
 // 2. Push Back
 
-// Insert
+# include <iostream>
+# include <queue>
+using namespace std;
+int main(){
+    deque <int> dq;
+    dq.push_front(300);
+    dq.push_front(200);
+    dq.push_front(100);
+    dq.push_back(400);
+    dq.push_back(500);
 
-// 40
-// 50
+    for(int i : dq){
+        cout << i << " ";
+    }
+    return 0;
+}
+
 // 3. Pop Front
 
-// Print remaining deque.
+# include <iostream>
+# include <queue>
+using namespace std;
+int main(){
+    deque <int> dq;
+    dq.push_front(300);
+    dq.push_front(200);
+    dq.push_front(100);
+    dq.push_back(400);
+    dq.push_back(500);
+    dq.pop_front();
+    dq.pop_front();
+
+    for(int i : dq){
+        cout << i << " ";
+    }
+    return 0;
+}
 
 // 4. Pop Back
 
-// Print remaining deque.
+# include <iostream>
+# include <queue>
+using namespace std;
+int main(){
+    deque <int> dq;
+    dq.push_front(300);
+    dq.push_front(200);
+    dq.push_front(100);
+    dq.push_back(400);
+    dq.push_back(500);
+    dq.pop_back();
+    dq.pop_back();
+
+    for(int i : dq){
+        cout << i << " ";
+    }
+    return 0;
+}
 
 // 5. Print Deque
 
-// Traverse and print.
+# include <iostream>
+# include <queue>
+using namespace std;
+int main(){
+    deque <int> dq;
+    dq.push_back(300);
+    dq.push_back(200);
+    dq.push_back(100);
+
+    for(int i : dq){
+        cout << i << " ";
+    }
+    return 0;
+}
 
 // 🔴 PRIORITY QUEUE (6 Questions)
+
 // 1. Max Heap
 
-// Insert
+# include <iostream>
+# include <queue>
+using namespace std;
+int main(){
+    priority_queue <int> pq;
+    pq.push(5);
+    pq.push(1);
+    pq.push(8);
+    pq.push(3);
+    pq.push(9);
+    pq.push(2);
 
-// 5 1 8 3 9 2
+    priority_queue <int> temp = pq;
+    while(!temp.empty()){
+        cout << temp.top() << " ";
+        temp.pop();
+    }
+    return 0;
+}
 
-// Print
-
-// 9 8 5 3 2 1
 // 2. Min Heap
 
-// Same numbers.
+# include <iostream>
+# include <queue>
+using namespace std;
+int main(){
+    priority_queue <int, vector<int>, greater<int> > pq;
+    pq.push(5);
+    pq.push(1);
+    pq.push(8);
+    pq.push(3);
+    pq.push(9);
+    pq.push(2);
 
-// Output
+    priority_queue <int, vector<int>, greater<int> > temp = pq;
+    while(!temp.empty()){
+        cout << temp.top() << " ";
+        temp.pop();
+    }
+    return 0;
+}
 
-// 1 2 3 5 8 9
 // 3. Find Largest
 
-// Without sorting.
-
-// (Hint: top())
+# include <iostream>
+# include <queue>
+using namespace std;
+int main(){
+    priority_queue <int> pq;
+    pq.push(5);
+    pq.push(1);
+    pq.push(8);
+    pq.push(3);
+    pq.push(9);
+    pq.push(2);
+    cout << "LARGEST : " << pq.top() << " ";
+    return 0;
+}
 
 // 4. Find Smallest
 
-// Using min heap.
+# include <iostream>
+# include <queue>
+using namespace std;
+int main(){
+    priority_queue <int, vector<int>, greater<int> > pq;
+    pq.push(5);
+    pq.push(1);
+    pq.push(8);
+    pq.push(3);
+    pq.push(9);
+    pq.push(2);
+    cout << "SMALLEST : " << pq.top() << " ";
+    return 0;
+}
 
 // 5. Print Priority Queue
 
-// Print all elements.
+# include <iostream>
+# include <queue>
+using namespace std;
+int main(){
+    priority_queue <int> pq;
+    pq.push(5);
+    pq.push(1);
+    pq.push(8);
+    pq.push(3);
+    pq.push(9);
+    pq.push(2);
+
+    priority_queue <int> temp = pq;
+    while(!temp.empty()){
+        cout << temp.top() << " ";
+        temp.pop();
+    }
+    return 0;
+}
 
 // 6. K Largest
 
-// Insert
+# include <iostream>
+# include <queue>
+using namespace std;
+int main(){
+    priority_queue <int> pq;
+    pq.push(10);
+    pq.push(4);
+    pq.push(15);
+    pq.push(2);
+    pq.push(20);
 
-// 10 4 15 2 20
-
-// Print first 3 largest.
-
-// Priority Queue
+    for(int i = 0; i < 3; i++){
+        cout << pq.top() << " ";
+        pq.pop();
+    }
+    return 0;
+}
 
 // Find Kth Largest Element
 
-// Example
+# include <iostream>
+# include <queue>
+using namespace std;
+int main(){
+    priority_queue <int> pq;
+    int k;
+    cout << "Enter K : ";
+    cin >> k;
+    pq.push(3);
+    pq.push(2);
+    pq.push(1);
+    pq.push(5);
+    pq.push(6);
+    pq.push(4);
 
-// 3 2 1 5 6 4
-
-// Find
-
-// 2nd Largest
-
-// Answer
-
-// 5
+    if (k <= 0 || k > pq.size()) {
+        cout << "Invalid value of k";
+        for(int i = 0; i < k - 1; i++){
+            pq.pop();
+        }
+        cout << pq.top() << " ";
+    }
+    return 0;
+}
