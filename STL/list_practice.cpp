@@ -1,38 +1,77 @@
-// 🟣 LIST (5 Questions)
 // 1. Print a List
-// list<int> l = {10,20,30,40,50};
 
-// Output:
+# include <iostream>
+# include <list>
+using namespace std;
+int main(){
+    list <int> l = {10, 20, 30, 40, 50};
+    list <int> :: iterator i = l.begin();
+    while(i != l.end()){
+        cout << *i << " ";
+        i++;
+    }
+    return 0;
+}
 
-// 10 20 30 40 50
 // 2. Insert Elements
-// Insert 5 at front.
-// Insert 60 at back.
 
-// Output
+# include <iostream>
+# include <list>
+using namespace std;
+int main(){
+    list <int> l = {10, 20, 30, 40, 50};
+    l.push_front(5);
+    l.push_back(100);
 
-// 5 10 20 30 40 50 60
+    for(int i : l){
+        cout << i << " ";
+    }
+    return 0;
+}
+
 // 3. Delete Elements
 
-// Remove
+# include <iostream>
+# include <list>
+using namespace std;
+int main(){
+    list <int> l = {10, 20, 30, 40, 50};
+    l.pop_front();
+    l.pop_back();
 
-// first element
-// last element
+    for(int i : l){
+        cout << i << " ";
+    }
+    return 0;
+}
+
 // 4. Reverse a List
 
-// Input
+# include <iostream>
+# include <list>
+using namespace std;
+int main(){
+    list <int> l = {1, 2, 3, 4, 5};
+    l.reverse();
 
-// 1 2 3 4 5
-
-// Output
-
-// 5 4 3 2 1
-
-// (Hint: Use STL function.)
+    for(int i : l){
+        cout << i << " ";
+    }
+    return 0;
+}
 
 // 5. Find Sum of List
 
-// Output
+# include <iostream>
+# include <list>
+using namespace std;
+int main(){
+    list <int> l = {10, 20, 30, 40, 50};
+    int sum = 0;
 
-// 150
-
+    for(int i : l){
+        sum += i;
+    }
+    cout << "SUM : " << sum << " ";
+    return 0;
+}
