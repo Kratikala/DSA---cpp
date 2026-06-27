@@ -1,68 +1,150 @@
-// 🔵 STACK (6 Questions)
 // 1. Push 5 Elements
 
-// Print
+# include <iostream>
+# include <stack>
+using namespace std;
+int main(){
+    stack <int> st;
+    st.push(10);
+    st.push(20);
+    st.push(30);
+    st.push(40);
+    st.push(50);
+    cout << "TOP : " << st.top() << endl;
+    cout << "SIZE : " << st.size() << endl;
 
-// Top:
-// Size:
+}
+
 // 2. Pop 2 Elements
 
-// Print remaining top.
+# include <iostream>
+# include <stack>
+using namespace std;
+int main(){
+    stack <int> st;
+    st.push(10);
+    st.push(20);
+    st.push(30);
+    st.push(40);
+    st.push(50);
+    st.pop();
+    st.pop();
+    cout << "TOP : " << st.top() << endl;
+}
 
 // 3. Print All Elements
 
-// Print stack without changing the original stack.
+# include <iostream>
+# include <stack>
+using namespace std;
+int main(){
+    stack <int> st;
+    st.push(10);
+    st.push(20);
+    st.push(30);
+    st.push(40);
+    st.push(50);
 
-// (Hint: Make a copy.)
+    stack <int> temp = st;
+    while(!temp.empty()){
+        cout << temp.top() << " ";
+        temp.pop();
+    }
+    return 0;
+}
 
 // 4. Reverse a String
 
-// Input
-
-// Kratika
-
-// Output
-
-// akitarK
-
-// (Hint: Use stack.)
+# include <iostream>
+# include <stack>
+# include <string>
+using namespace std;
+int main(){
+    string name = "Kratika";
+    stack <char> st;
+    for(char ch : name){
+        st.push(ch);
+    }
+        while(!st.empty()){
+        cout << st.top() << " ";
+        st.pop();
+    }
+    return 0;
+}   
 
 // 5. Count Elements
 
-// Print
+# include <iostream>
+# include <stack>
+using namespace std;
+int main(){
+    stack <int> st;
+    st.push(10);
+    st.push(20);
+    st.push(30);
+    st.push(40);
+    st.push(50);
+    cout << "SIZE : " << st.size() << endl;
+    return 0;
+}
 
-// Size = 5
 // 6. Check Empty
 
-// After popping everything
+# include <iostream>
+# include <stack>
+using namespace std;
+int main(){
+    stack <int> st;
+    st.push(10);
+    st.push(20);
+    st.push(30);
+    st.push(40);
 
-// Print
+    st.pop();
+    st.pop();
+    st.pop();
+    st.pop();
 
-// Empty
-
-// Stack
+    if(st.empty()){
+        cout << "Stack is Empty";
+    }
+    else{
+        cout << "Stack is not Empty";
+    }
+    return 0;
+}
 
 // Balanced Parentheses
 
-// Input
+# include <iostream>
+# include <string>
+# include <stack>
+using namespace std;
+int main(){
+    string p = "))))((((";
+    stack <char> st;
+    bool balanced = true;
+    for(char ch : p){
+        if (ch == '('){
+            st.push(ch);
+        }
+        else if (ch == ')'){
+            if(st.empty()){
+                balanced = false;
+                break;
+            }
+            st.pop();
+        }
+    }
+    if(!st.empty()){
+        balanced = false;
+    }
+    if(balanced){
+        cout << "BALANCED";
+    }
+    else{
+        cout << "NOT BALANCED";
+    }
+    return 0;
+}
 
-// ((()))
-
-// Output
-
-// Balanced
-// Queue
-
-// Generate Binary Numbers
-
-// Input
-
-// 5
-
-// Output
-
-// 1
-// 10
-// 11
-// 100
-// 101
