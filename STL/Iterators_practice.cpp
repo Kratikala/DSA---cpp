@@ -57,7 +57,7 @@ int main(){
     vector <int> v = {1, 2, 3, 4, 5};
     int target = 40;
     auto it = find(v.begin(), v.end(), target);
-    if(*it == target){
+    if(it != v.end()){
         cout << "FOUND";
     }
     else{
@@ -92,6 +92,7 @@ int main(){
 using namespace std;
 int main(){
     vector <int> v = {1, 2, 2, 3, 3, 4, 5, 5};
+    sort(v.begin(), v.end());
     auto it = unique(v.begin(), v.end());
     v.erase(it, v.end());
     for(int i : v){
