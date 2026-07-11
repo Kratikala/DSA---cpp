@@ -195,7 +195,7 @@ int main(){
     int odd = 0;
     for(int i = 0; i < rows; i++){
         for(int j = 0; j < cols; j++){
-            if(matrix[i][j] % 2 == 0){
+            if(matrix[i][j] % 2 == cols - 1){
                 even++;
             }
             else{
@@ -281,9 +281,11 @@ int main(){
     bool identity = true;
     for(int i = 0; i < rows; i++){
         for( int j = 0; j < cols; j++){
-            if (matrix[i][i] != 1 && matrix[i][j] != 0 ){
+            if (i == j && matrix[i][j] != 1 ){
                 identity = false;
-                break;
+            }
+            if(i != j && matrix[i][j] != 0){
+                identity = false;
             }
         }
     }
