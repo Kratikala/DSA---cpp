@@ -1,8 +1,0 @@
-.vscode/
-*.exe
-*.out
-*.o
-output/
-logic_practice.cpp
-CHAR ARRAYS/main.cpp
-STRINGS/main.cpp
