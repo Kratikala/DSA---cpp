@@ -15,16 +15,21 @@
 
 # include <iostream>
 using namespace std;
-void reverse(int arr[], int size){
+
+void reverse(int arr[], int size)
+{
     int start = 0;
     int end = size - 1;
-    while (start < end){
+    while (start < end)
+    {
         swap(arr[start], arr[end]);
         start++;
         end--;
     }
 }
-int main(){
+
+int main()
+{
     int arr[] = {10, 20, 30, 40, 50};
     int size = 5;
     reverse(arr, size);

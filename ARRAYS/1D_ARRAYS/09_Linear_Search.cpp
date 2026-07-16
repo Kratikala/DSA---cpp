@@ -14,21 +14,28 @@
 
 # include <iostream>
 using namespace std;
-int linear_search( int arr[], int size){
+
+int linear_search( int arr[], int size)
+{
     int search = 30;
     bool found = false;
-    for ( int index = 0; index < size; index++){
-        if (arr[index] == search){
+    for ( int index = 0; index < size; index++)
+    {
+        if (arr[index] == search)
+        {
             cout << "The element is at index : " << index << endl;
             found = true;
             break;
         }           
     }
-    if (!found){
-            cout << "Not Found" << endl;
-        }   
+    if (!found)
+    {
+        cout << "Not Found" << endl;
+    }   
 }
-int main(){
+
+int main()
+{
     int arr[5] = {10, 20, 30, 40, 50};
     int size = 5;
     linear_search(arr, size);

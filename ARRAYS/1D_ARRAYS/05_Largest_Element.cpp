@@ -13,16 +13,22 @@
 
 # include <iostream>
 using namespace std;
-void largest(int arr[], int size){
+
+void largest(int arr[], int size)
+{
     int largest = arr[0];
-    for (int i = 1; i < size; i++){
-        if (arr[i] > largest){
+    for (int i = 1; i < size; i++)
+    {
+        if (arr[i] > largest)
+        {
             largest = arr[i];
         }    
     }
     cout << "Largest is :" << largest << endl;
 }
-int main(){
+
+int main()
+{
     int arr[] = {10, 5, 9, 20, 5, 1};
     int size = 6;
     largest(arr, size);

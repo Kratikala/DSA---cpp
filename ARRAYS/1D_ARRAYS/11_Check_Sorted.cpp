@@ -14,22 +14,30 @@
 
 # include <iostream>
 using namespace std;
-void sort(int arr[], int size){
+
+void sort(int arr[], int size)
+{
     bool isSorted = true;
-    for (int i = 0; i < size; i++){
-        if (arr[i] > arr[i+1]){
+    for (int i = 0; i < size; i++)
+    {
+        if (arr[i] > arr[i+1])
+        {
             isSorted = false;
             break;
         } 
     }
-    if (isSorted){
+    if (isSorted)
+    {
         cout << "Array is sorted" << endl;
     }
-    else{
+    else
+    {
         cout << "Array is not sorted" << endl;
     }
 }
-int main(){
+
+int main()
+{
     int arr[5] = {1, 3, 2, 4, 5};
     int size = 5;
     sort(arr, size);

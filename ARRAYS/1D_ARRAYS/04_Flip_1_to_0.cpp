@@ -14,19 +14,25 @@
 
 # include <iostream>
 using namespace std;
-void flip(int arr[], int size){
-    for (int i = 0; i < size; i++){
+
+void flip(int arr[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
         if (arr[i] == 0)
             arr[i] = 1;
         else
             arr[i] = 0;
     
     }
-    for (int i = 0; i < size; i++){
+    for (int i = 0; i < size; i++)
+    {
         cout << arr[i] << " ";
     }
 }
-int main(){
+
+int main()
+{
     int arr[6] = {1, 0, 0, 1, 1, 0};
     int size = 6;
     flip(arr, size);

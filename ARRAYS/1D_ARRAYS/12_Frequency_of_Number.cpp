@@ -9,21 +9,27 @@
 // - Traversal
 //
 // Time Complexity: O(n)
-// Space Complexity: O(n)
+// Space Complexity: O(1)
 
 
 # include <iostream>
 using namespace std;
-int count = 0;
-void frequency(int arr[], int size, int value){
-    for ( int i = 0; i < size; i++){
-        if (arr[i] == value){
+
+void frequency(int arr[], int size, int value)
+{
+    int count = 0;
+    for ( int i = 0; i < size; i++)
+    {
+        if (arr[i] == value)
+        {
         count++;
         }
     }
-    cout << "Frequency is : " << count << " ";
+    cout << "Frequency is : " << count << endl;
 }
-int main(){
+
+int main()
+{
     int arr[6] = {1, 1, 3, 5, 6, 1};
     int size = 6;
     int value;
