@@ -25,9 +25,10 @@ This folder contains my implementation and practice of Singly Linked List concep
 - Insert at Position
 - Insert Before Value
 
-### Advanced *(Coming Soon)*
+### Advanced 
 - Reverse Linked List
 - Middle of Linked List
+*(Coming Soon)*
 - Detect Loop
 - Remove Loop
 - Merge Two Sorted Linked Lists
