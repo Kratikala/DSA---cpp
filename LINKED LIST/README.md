@@ -58,6 +58,10 @@ This folder contains my implementation and practice of **Singly Linked List** pr
 - Edge Case Handling
 - Memory Management
 - Time & Space Complexity Analysis
+- Reverse Linked List
+- Carry Handling
+- Edge Case: All digits are 9
+- In-place Modification
 
 
 ## Complexity Overview
