@@ -3,11 +3,11 @@ Topic      : Linked List
 Problem    : Intersection of Two Linked Lists
 Platform   : LeetCode 160 / Striver A2Z
 
-Approach   : Brute Force (Length Calculation & Aligning Longer List)
+Approach   : Optimal1 (Length Calculation & Aligning Longer List)
 Time       : O(N + M)
 Space      : O(1)
 
-Approach   : Optimal (Two Pointer Switching Technique)
+Approach   : Optimal2 (Two Pointer Switching Technique)
 Time       : O(N + M)
 Space      : O(1)
 */
@@ -45,7 +45,7 @@ int LengthOfLL(Node* head)
 
 // ---------- Approach 1 : Brute ----------
 
-Node* IntersectionBrute(Node* head1, Node* head2)
+Node* IntersectionOptimal1(Node* head1, Node* head2)
 {
     int len1 = LengthOfLL(head1);
     int len2 = LengthOfLL(head2);
@@ -86,7 +86,7 @@ Node* IntersectionBrute(Node* head1, Node* head2)
 
 // ---------- Approach 2 : Optimal ----------
 
-Node* IntersectionOptimal(Node* head1, Node* head2)
+Node* IntersectionOptimal2(Node* head1, Node* head2)
 {
     Node* A = head1;
     Node* B = head2;
@@ -127,7 +127,7 @@ int main()
     head2->next = new Node(6);
     head2->next->next = common;
 
-    Node* ans = IntersectionBrute(head1, head2);
+    Node* ans = IntersectionOptimal1(head1, head2);
     if(ans != NULL)
     {
         cout << "Intersects at : " << ans->data << " ";
@@ -137,7 +137,7 @@ int main()
         cout << "No Intersection takes place";
     }
 
-    Node* ans = IntersectionOptimal(head1, head2);
+    Node* ans = IntersectionOptimal2(head1, head2);
     if(ans != NULL)
     {
         cout << "Intersects at : " << ans->data << " ";
