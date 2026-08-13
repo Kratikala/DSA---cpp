@@ -104,7 +104,7 @@ Node* AddTwo(Node* head1, Node* head2)
         }
     }
 
-    if(carry ==1)
+    if(carry == 1)
     {
         Node* care = new Node(carry);
         tail->next = care;
