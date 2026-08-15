@@ -25,6 +25,8 @@ public:
     }
 };
 
+// ---------- Array to Linked List ----------
+
 Node* ArrayToLL(vector<int> &arr)
 {
     if(arr.empty())
@@ -41,6 +43,8 @@ Node* ArrayToLL(vector<int> &arr)
     }
     return head;
 }
+
+// ---------- Approach : Optimal ----------
 
 Node* mS(Node* head)
 {
@@ -99,6 +103,8 @@ Node* mS(Node* head)
     return dummy->next;
 }
 
+// ---------- Print Function ----------
+
 void Print(Node* head)
 {
     while(head != NULL)
@@ -114,7 +120,7 @@ int main()
 
     Node* head = ArrayToLL(arr);
     Node* ans = mS(head);
-
     Print(ans);
+    
     return 0;
 }
