@@ -4,6 +4,7 @@ Problem    : Sort List
 Platform   : LeetCode 148 / Striver A2Z DSA Sheet
 
 Approach   : Merge Sort + Slow & Fast Pointer
+
 Time Complexity : O(n log n)
 Space Complexity: O(log n)  // Recursion stack
 */
@@ -121,6 +122,6 @@ int main()
     Node* head = ArrayToLL(arr);
     Node* ans = mS(head);
     Print(ans);
-    
+
     return 0;
 }
