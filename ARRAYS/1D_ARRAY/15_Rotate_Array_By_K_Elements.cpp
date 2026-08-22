@@ -33,20 +33,48 @@ void RotateRight(vector <int> &arr, int k)
     Reverse(arr, k, n - 1);
 }
 
+void RotateLeft(vector <int> &arr, int k)
+{
+    int n = arr.size();
+
+    k = k % n;   // for larger values
+
+    Reverse(arr, 0, n - 1);
+    Reverse(arr, 0, n - k - 1);
+    Reverse(arr, n - k, n - 1);
+}
+
 int main()
 {
     vector <int> arr = {1, 2, 3, 4, 5, 6, 7};
 
     int k;
-    cout << "Values to rotate : " << " ";
+    char directions;
+
+    cout << "Enter the direction (L/R) : " << " ";
+    cin >> directions;
+
+    cout << "Enter the number of rotations : " << " ";
     cin >> k;
 
-    
-    RotateRight(arr, k);
-
-    for(int x = 0; x < arr.size(); x++)
+    if(directions == 'R' || directions == 'r')
     {
-        cout << arr[x] << " " ;
+        RotateRight(arr, k);
+    }
+
+    else if(directions == 'L' || directions == 'l')
+    {
+        RotateLeft(arr, k);
+    }
+
+    else
+    {
+        cout << "Invalid direction";
+    }
+
+    for(int x : arr)
+    {
+        cout << x << " " ;
     }
 
     return 0;
