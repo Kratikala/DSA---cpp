@@ -13,16 +13,16 @@ Space      : O(1)
 # include <vector>
 using namespace std;
 
-int Buy_Sell(vector <int> arr)
+int Buy_Sell(vector <int> prices)
 {
-    int minprice = arr[0];
+    int minprice = prices[0];
     int maxprofit = 0;
 
-    for(int i = 1; i < arr.size(); i++)
+    for(int i = 1; i < prices.size(); i++)
     {
-        minprice = min(minprice, arr[i]);
+        minprice = min(minprice, prices[i]);
 
-        int profit = arr[i] - minprice;
+        int profit = prices[i] - minprice;
 
         maxprofit = max(maxprofit, profit);
     }
@@ -32,9 +32,9 @@ int Buy_Sell(vector <int> arr)
 
 int main()
 {
-    vector <int> arr = {7, 1, 5, 3, 6, 4};
+    vector <int> prices = {7, 1, 5, 3, 6, 4};
 
-    int result = Buy_Sell(arr);
+    int result = Buy_Sell(prices);
     cout << "Maximum Profit : " << result << " ";
 
     return 0;
