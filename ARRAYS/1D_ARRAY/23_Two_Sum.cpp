@@ -16,26 +16,31 @@ using namespace std;
 
 pair <int, int> TwoSum(vector <int> &arr, int target)
 {
-    sort(arr.begin(), arr.end());
+    vector <pair<int, int>> numswithindex;
+    for(int i = 0; i < arr.size(); i++){
+        numswithindex.push_back({arr[i], i});
+    }
+    sort(numswithindex.begin(), numswithindex.end());
 
     int left = 0;
     int right = arr.size() - 1;
+    int sum = numswithindex[left].first + numswithindex[right].first;
 
     while(left < right)
     {
-        if (arr[left] + arr[right] > target)
+        if (sum == target)
         {
-            right--;
+            return{numswithindex[left].second, numswithindex[right].second};
         }
 
-        else if(arr[left] + arr[right] < target)
+        else if(sum < target)
         {
             left++;
         }
 
         else
         {
-            return {left, right};
+            right--;
         } 
     }
     return {-1, -1};
