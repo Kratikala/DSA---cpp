@@ -10,6 +10,7 @@ Space      : O(n)
 
 # include <iostream>
 # include <vector>
+# include <algorithm>
 using namespace std;
 
 vector <int> Leaders(vector <int> &arr)
@@ -23,13 +24,14 @@ vector <int> Leaders(vector <int> &arr)
 
     while(right >= 0)
     {
-        if(arr[right] > maxi)
+        if(arr[right] >= maxi)
         {
             leaders.push_back(arr[right]);
             maxi = arr[right];
         }
         right--;
     }
+    reverse(leaders.begin(), leaders.end());
     return leaders;
 }
 
