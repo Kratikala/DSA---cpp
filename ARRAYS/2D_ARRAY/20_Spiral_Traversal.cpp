@@ -1,39 +1,39 @@
-// Problem: Spiral Traversal
-//
-// Objective:
-// Traverse a matrix in spiral order.
-//
-// Concepts Used:
-// - Boundary Traversal
-// - Matrix Traversal
-//
-// Time Complexity: O(rows × cols)
-// Space Complexity: O(1)
+/*
+Topic      : Matrix
+Problem    : Spiral Matrix
+Platform   : LeetCode 54 / GFG
 
+Approach   : Traverse the matrix layer by layer using four boundaries: top, bottom, left, and right. Traverse the top row, right column, bottom row, and left column, then shrink the boundaries after each traversal.
+Time       : O(n * m)
+Space      : O(1)
+*/
 
 # include <iostream>
+# include <vector>
 using namespace std;
 
-void spiral(int arr[][3], int rSize, int cSize)
+vector<int> spiral(vector<vector<int>> &matrix)
 {
     int top = 0;
-    int bottom = rSize - 1;
+    int bottom = matrix.size() - 1;
     int left = 0;
-    int right = cSize - 1;
+    int right = matrix[0].size() - 1;
+
+    vector <int> result;
 
     while(top <= bottom && left <= right)
     {
         // Top Row
         for(int j = left; j <= right; j++)
         {
-            cout << arr[top][j] << " ";
+            result.push_back(matrix[top][j]);
         }
         top++;
 
         // Right Column
         for(int i = top; i <= bottom; i++)
         {
-            cout << arr[i][right] << " ";
+            result.push_back(matrix[i][right]);
         }
         right--;
 
@@ -42,7 +42,7 @@ void spiral(int arr[][3], int rSize, int cSize)
         {
             for(int j = right; j >= left; j--)
             {
-                cout << arr[bottom][j] << " ";
+                result.push_back(matrix[bottom][j]);
             }
             bottom--;
         }
@@ -52,16 +52,24 @@ void spiral(int arr[][3], int rSize, int cSize)
         {
             for(int i = bottom; i >= top; i--)
             {
-                cout << arr[i][left] << " ";
+                result.push_back(matrix[i][left]);
             }
             left++;
         }
     }
+    return result;
 }
 
 int main()
 {
-    int arr[3][3] ={{1, 2, 3},{4, 5, 6},{7, 8, 9}};
-    spiral(arr, 3, 3);
+    vector<vector<int>> matrix ={{1, 2, 3},{4, 5, 6},{7, 8, 9}};
+    
+    vector <int> ans = spiral(matrix);
+
+    for(int x : ans)
+    {
+        cout << x << " ";
+    }
+
     return 0;
 }
