@@ -1,34 +1,36 @@
 # Arrays
 
-This folder contains my C++ implementation and revision of array-related concepts and problems.
+Arrays are one of the fundamental data structures in DSA.
 
 ## Topics Covered
 
 ### 1D Arrays
-- Array Basics
-- Input & Output
-- Traversal
-- Linear Search
-- Reverse Array
-- Maximum & Minimum Element
+- Basic traversal
+- Hashing / frequency counting
+- Prefix Sum
+- Two Pointer
+- Sliding Window
+- Kadane's Algorithm
+- Sorting-based approaches
+- Array manipulation
 
-### 2D Arrays
-- Matrix Traversal
-- Row-wise Traversal
-- Column-wise Traversal
-- Spiral Traversal
-- Matrix Multiplication
-- Saddle Point
+### 2D Arrays / Matrices
+- Matrix traversal
+- Row/column manipulation
+- Spiral traversal
+- Matrix rotation
+- In-place matrix transformations
 
-## Concepts Practiced
+## Key Patterns
 
-- Indexing
-- Nested Loops
-- Array Manipulation
-- Space Optimization
-- Dry Running Algorithms
-- Time Complexity Analysis
+- Hashing
+- Prefix Sum
+- Two Pointers
+- In-place manipulation
+- Matrix boundary traversal
+- Matrix transformation
 
-## Purpose
+## Practice Platforms
 
-This folder is part of my DSA preparation for placements. The focus is on understanding the logic, improving implementation skills, and building a strong foundation before moving on to advanced data structures.
+- LeetCode
+- GeeksforGeeks
