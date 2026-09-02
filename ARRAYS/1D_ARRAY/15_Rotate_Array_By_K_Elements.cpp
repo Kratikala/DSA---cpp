@@ -39,9 +39,9 @@ void RotateLeft(vector <int> &arr, int k)
 
     k = k % n;   // for larger values
 
+    Reverse(arr, 0, k - 1);
+    Reverse(arr, k, n - 1);
     Reverse(arr, 0, n - 1);
-    Reverse(arr, 0, n - k - 1);
-    Reverse(arr, n - k, n - 1);
 }
 
 int main()
