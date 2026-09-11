@@ -38,6 +38,7 @@ int main()
 {
 
     int n;
+    
     cout << "Enter the root : ";
     cin >> n;
 
