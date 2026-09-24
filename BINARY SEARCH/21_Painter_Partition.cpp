@@ -1,7 +1,7 @@
 /*
 Topic      : Binary Search on Answer
 Problem    : Painter's Partition Problem
-Platform   : Striver A/Z Sheet
+Platform   : Striver A2Z Sheet
 
 Approach   : Binary search on the maximum time allowed for one painter.
 Time       : O(n * log(sum(C) * B))
