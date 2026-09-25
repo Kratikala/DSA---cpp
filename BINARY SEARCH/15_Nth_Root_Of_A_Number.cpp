@@ -12,9 +12,9 @@ Space      : O(1)
 # include <vector>
 using namespace std;
 
-int power(int mid, int n)
+long long power(int mid, int n)
 {
-    int result = 1;
+    long long result = 1;
 
     for(int i = 1; i <= n; i++)
     {
