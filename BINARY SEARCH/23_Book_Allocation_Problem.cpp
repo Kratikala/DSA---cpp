@@ -15,6 +15,11 @@ using namespace std;
 
 int Book(vector <int> pages, int m)
 {
+    if(m > pages.size())
+    {
+        return -1;
+    }
+    
     int low = *max_element(pages.begin(), pages.end());
 
     int sum = 0;
