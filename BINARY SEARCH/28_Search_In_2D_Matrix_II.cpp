@@ -50,4 +50,5 @@ int main(){
     {
         cout << "Target found at row " << ans.first << ", column " << ans.second;
     }
+    return 0;
 }
