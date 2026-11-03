@@ -24,7 +24,14 @@ double Power(double x, int n)
         return 1/ Power(x, -n);
     }
 
-    return x * Power(x , n - 1);
+    double half = Power(x, n/2);
+
+    if(n % 2 == 0)
+    {
+        return half * half;
+    }
+
+    return x * half * half;
 }
 
 int main()
