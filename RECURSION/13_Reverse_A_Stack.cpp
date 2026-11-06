@@ -11,22 +11,6 @@ Auxiliary Space: O(n), due to recursive call stack.
 # include <stack>
 using namespace std;
 
-void insertatbottom(stack <int> &st, int x);
-
-void reverse(stack <int> &st)
-{
-    if(st.size() <= 1)
-    {
-        return;
-    }
-
-    int top_element = st.top();
-    st.pop();
-
-    reverse(st);
-    insertatbottom(st, top_element);
-}
-
 void insertatbottom(stack <int> &st, int x)
 {
     if(st.empty())
@@ -41,6 +25,20 @@ void insertatbottom(stack <int> &st, int x)
     insertatbottom(st, x);
 
     st.push(top);
+}
+
+void reverse(stack <int> &st)
+{
+    if(st.size() <= 1)
+    {
+        return;
+    }
+
+    int top_element = st.top();
+    st.pop();
+
+    reverse(st);
+    insertatbottom(st, top_element);
 }
 
 int main()
