@@ -1,11 +1,11 @@
 /*
-Topic : Recursion
-Problem : Count all subsequences whose sum equals K.
+Topic : Recursion / Backtracking
+Problem : Generate Binary Strings Without Consecutive 1s
 Platform : Striver A2Z
 
-Approach : Use pick and non-pick recursion while maintaining the current sum. Return the sum of the counts obtained from both recursive calls.
-Time Complexity : O(2^N)
-Space Complexity : O(N) recursion stack.
+Approach : Pick / Not Pick with Constraints
+Time Complexity : O(n * 2^n) upper bound including output construction.
+Auxiliary Space Complexity : O(n) recursion stack and current string.
 */
 
 # include <iostream>
